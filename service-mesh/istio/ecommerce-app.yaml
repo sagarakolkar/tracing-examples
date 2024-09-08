@@ -16,7 +16,7 @@ spec:
   selector:
     app: api
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
@@ -77,7 +77,7 @@ spec:
   selector:
     app: cart
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cart
@@ -136,7 +136,7 @@ spec:
   selector:
     app: checkout
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkout
@@ -197,7 +197,7 @@ spec:
   selector:
     app: payment
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: payment
@@ -254,7 +254,7 @@ spec:
   selector:
     app: refreshdb
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: refreshdb
@@ -311,7 +311,7 @@ spec:
   selector:
     service: catalog
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: catalog-v1
@@ -355,7 +355,7 @@ spec:
             fieldRef:
               fieldPath: status.hostIP
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: catalog-v2
@@ -400,7 +400,7 @@ spec:
               fieldPath: status.hostIP
 ---
 ### Requestgen
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: default
