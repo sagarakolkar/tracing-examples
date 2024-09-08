@@ -22,17 +22,22 @@ metadata:
   name: api
   namespace: ecommerce-example
   labels:
+    trace: disabled
     app: api
     version: v1
 spec:
   replicas: 1
+  selector:
+    matchLabels:  
+        trace: disabled
+        app: api
+        version: v1    
   template:
     metadata:
       # annotations:
       #   sidecar.istio.io/bootstrapOverride: "istio-signalfx-bootstrap-config"
       labels:
         trace: disabled
-        # agentEndpoint: "true"
         app: api
         version: v1
     spec:
@@ -87,6 +92,11 @@ metadata:
     version: v1
 spec:
   replicas: 1
+  selector:
+    matchLabels:  
+        trace: disabled
+        app: cart  
+        version: v1        
   template:
     metadata:
       annotations:
@@ -146,6 +156,10 @@ metadata:
     version: v1
 spec:
   replicas: 1
+  selector:
+    matchLabels:  
+        app: checkout
+        version: v1   
   template:
     metadata:
       annotations:
